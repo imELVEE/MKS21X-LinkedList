@@ -62,5 +62,10 @@ public class mydriver{
     System.out.println(testList.contains(testList.get(0)));
     System.out.println(testList.contains((Integer) 90));
     System.out.println(testList.contains((Integer) 30000));
+
+    System.out.println("--------------------------------------------");
+
+    System.out.println(testList.remove((Integer) 90));
+    System.out.println(testList);
   }
 }

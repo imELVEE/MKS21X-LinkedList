@@ -72,14 +72,6 @@ public class MyLinkedList{
   }
 
   public int size(){
-    /*
-    current = start;
-    size = 0;
-    while ( current.hasNext() ){
-      size++;
-      current = current.next();
-    }
-    */
     return size;
   }
 
@@ -149,7 +141,11 @@ public class MyLinkedList{
   }
 
   public boolean remove(Integer value){
-    return false;
+    boolean worked = contains(value);
+    current.prev().nextChange(current.next());
+    current.next().prevChange(current.prev());
+    size--;
+    return worked;
   }
 
 }
