@@ -14,12 +14,32 @@ public class MyLinkedList{
       return data;
     }
 
+    public boolean set(Integer value){
+      if (value != null){
+        data = value;
+        return true;
+      }
+      return false;
+    }
+
     public boolean hasNext(){
       return (next != null);
     }
 
     public Node next(){
       return next;
+    }
+
+    public Node prev(){
+      return prev;
+    }
+
+    public boolean prevChange(Node changeTo){
+      if (changeTo != null){
+        prev = changeTo;
+        return true;
+      }
+      return false;
     }
 
     public boolean nextChange(Node changeTo){
@@ -75,6 +95,39 @@ public class MyLinkedList{
     boolean worked = end.nextChange(newEnd);
     end = newEnd;
     return worked;
+  }
+
+  public Integer get(int index){
+    if (index < (size / 2) ){
+      current = start;
+      for (int i = 0 ; i < index ; i++){
+        current = current.next();
+      }
+    }
+    else{
+      current = end;
+      for (int i = size - 1 ; i > index - 1 ; i--){
+        current = current.prev();
+      }
+    }
+
+    return current.get();
+  }
+
+  public Integer set(int index, Integer value){
+    //does a single loop, so it is still 0(N^2)
+    get(index);
+    current.set(value);
+    return value;
+  }
+
+  public boolean contains(Integer value){
+    current = start;
+    while (current.hasNext() && current.get() != value){
+      current = current.next();
+    }
+    //return true if the loop found a matching value before the end OR value == end value
+    return (current != end || value == end.get());
   }
 
 }
