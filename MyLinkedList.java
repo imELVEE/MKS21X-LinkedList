@@ -124,6 +124,16 @@ public class MyLinkedList{
     return (current != end || value == end.get());
   }
 
+  public int indexOf(Integer value){
+    current = start;
+    int i = 0;
+    while (i < size && current.get() != value){
+      current = current.next();
+      i++;
+    }
+    return i;
+  }
+
   public void add(int index, Integer value){
     get(index);
     Node toBeAdded = new Node(value, current, current.prev());

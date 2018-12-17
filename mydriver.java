@@ -67,5 +67,7 @@ public class mydriver{
 
     System.out.println(testList.remove((Integer) 90));
     System.out.println(testList);
+    System.out.println("index " + testList.get(3) + ": " + testList.indexOf(testList.get(3)));
+    System.out.println("index " + testList.get(7) + ": " + testList.indexOf(testList.get(7)));
   }
 }
