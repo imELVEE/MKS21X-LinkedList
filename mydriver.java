@@ -3,6 +3,9 @@ public class mydriver{
     int amount = Integer.parseInt(args[0]);
 
     MyLinkedList testList = new MyLinkedList();
+
+    System.out.println(testList);
+
     for (int i = 0 ; i < amount ; i++){
       testList.add( (Integer)(int) (Math.random() * 100) );
     }
@@ -35,7 +38,7 @@ public class mydriver{
     System.out.println("size: " + testList.size());
     System.out.println("index 3: " + testList.get(3));
     System.out.println("index 10: " + testList.get(11));
-    System.out.println("index 10 change to 90: " + testList.set(10, (Integer) 20));
+    System.out.println("index 10 change to 20: " + testList.set(10, (Integer) 20));
     System.out.println(testList);
     System.out.println(testList.contains(testList.get(3)));
     System.out.println(testList.contains(testList.get(0)));
@@ -69,5 +72,6 @@ public class mydriver{
     System.out.println(testList);
     System.out.println("index " + testList.get(3) + ": " + testList.indexOf(testList.get(3)));
     System.out.println("index " + testList.get(7) + ": " + testList.indexOf(testList.get(7)));
+    System.out.println("index 600000000: " + testList.indexOf(600000000));
   }
 }
