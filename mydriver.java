@@ -11,9 +11,52 @@ public class mydriver{
     //testList.add(null);
 
     System.out.println(testList);
+    System.out.println("size: " + testList.size());
     System.out.println("index 3: " + testList.get(3));
-    System.out.println("index 9: " + testList.get(8));
-    System.out.println("index 9 change to 90: " + testList.set(9, (Integer) 90));
+    System.out.println("index 8: " + testList.get(8));
+    System.out.println("index 8 change to 90: " + testList.set(8, (Integer) 90));
+    System.out.println(testList);
+    System.out.println(testList.contains(testList.get(3)));
+    System.out.println(testList.contains(testList.get(0)));
+    System.out.println(testList.contains((Integer) 90));
+    System.out.println(testList.contains((Integer) 30000));
+
+    System.out.println("---------------------------------------------");
+
+    System.out.println(testList);
+    testList.add(4, (Integer) 400);
+    System.out.println(testList);
+    testList.add(7, (Integer) 700);
+    System.out.println(testList);
+
+    System.out.println("---------------------------------------------");
+
+    System.out.println(testList);
+    System.out.println("size: " + testList.size());
+    System.out.println("index 3: " + testList.get(3));
+    System.out.println("index 10: " + testList.get(11));
+    System.out.println("index 10 change to 90: " + testList.set(10, (Integer) 20));
+    System.out.println(testList);
+    System.out.println(testList.contains(testList.get(3)));
+    System.out.println(testList.contains(testList.get(0)));
+    System.out.println(testList.contains((Integer) 20));
+    System.out.println(testList.contains((Integer) 30000));
+
+    System.out.println("--------------------------------------------");
+
+    System.out.println(testList);
+    System.out.println(testList.remove(4));
+    System.out.println(testList);
+    System.out.println(testList.remove(6));
+    System.out.println(testList);
+
+    System.out.println("--------------------------------------------");
+
+    System.out.println(testList);
+    System.out.println("size: " + testList.size());
+    System.out.println("index 3: " + testList.get(3));
+    System.out.println("index 8: " + testList.get(8));
+    System.out.println("index 8 change to 90: " + testList.set(8, (Integer) 90));
     System.out.println(testList);
     System.out.println(testList.contains(testList.get(3)));
     System.out.println(testList.contains(testList.get(0)));

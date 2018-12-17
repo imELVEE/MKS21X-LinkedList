@@ -68,19 +68,18 @@ public class MyLinkedList{
       ans += current.get() + ", ";
       current = current.next();
     }
-    if (ans.length() > 1){
-      ans = ans.substring(0,ans.length()-2);
-    }
-    return ans + "]";
+    return ans + end.get() + "]";
   }
 
   public int size(){
+    /*
     current = start;
     size = 0;
     while ( current.hasNext() ){
       size++;
       current = current.next();
     }
+    */
     return size;
   }
 
@@ -88,13 +87,16 @@ public class MyLinkedList{
     if (start == null){
       start = new Node(value, end, null);
       end = start;
+      size++;
+      return true;
     }
-
-    Node newEnd = new Node(value, null, end);
-    size++;
-    boolean worked = end.nextChange(newEnd);
-    end = newEnd;
-    return worked;
+    else{
+      Node newEnd = new Node(value, null, end);
+      size++;
+      boolean worked = end.nextChange(newEnd);
+      end = newEnd;
+      return worked;
+    }
   }
 
   public Integer get(int index){
@@ -106,7 +108,7 @@ public class MyLinkedList{
     }
     else{
       current = end;
-      for (int i = size - 1 ; i > index - 1 ; i--){
+      for (int i = size - 1 ; i > index ; i--){
         current = current.prev();
       }
     }
@@ -128,6 +130,26 @@ public class MyLinkedList{
     }
     //return true if the loop found a matching value before the end OR value == end value
     return (current != end || value == end.get());
+  }
+
+  public void add(int index, Integer value){
+    get(index);
+    Node toBeAdded = new Node(value, current, current.prev());
+    current.prev().nextChange(toBeAdded);
+    current.prevChange(toBeAdded);
+    size++;
+  }
+
+  public Integer remove(int index){
+    get(index);
+    current.prev().nextChange(current.next());
+    current.next().prevChange(current.prev());
+    size--;
+    return current.get();
+  }
+
+  public boolean remove(Integer value){
+    return false;
   }
 
 }
