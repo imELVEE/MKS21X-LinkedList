@@ -210,4 +210,11 @@ public class MyLinkedList{
     return worked;
   }
 
+  public void extend(MyLinkedList other){
+    while (other.size() > 0){
+      add(other.get(0));
+      other.remove(0);
+    }
+  }
+
 }

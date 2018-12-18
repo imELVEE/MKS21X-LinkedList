@@ -73,5 +73,18 @@ public class mydriver{
     System.out.println("index " + testList.get(3) + ": " + testList.indexOf(testList.get(3)));
     System.out.println("index " + testList.get(7) + ": " + testList.indexOf(testList.get(7)));
     System.out.println("index 600000000: " + testList.indexOf(600000000));
+
+    System.out.println("--------------------------------------------");
+
+    MyLinkedList other = new MyLinkedList();
+    for (int i = 0 ; i < amount ; i++){
+      other.add( (Integer)(int) (Math.random() * 100) );
+    }
+    System.out.println(testList);
+    System.out.println(other);
+    System.out.println();
+    testList.extend(other);
+    System.out.println(testList);
+    System.out.println(other);
   }
 }
